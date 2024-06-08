@@ -380,4 +380,8 @@ body {
   .menu-container {
     display: none;
   }
+
+  .page {
+    max-width: 320px;
+  }
 }
