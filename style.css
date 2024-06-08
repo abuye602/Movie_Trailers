@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+}
+
+.page {
+  margin-bottom: 50px;
+  background-color: #151515;
+}
+.page.active {
+  background-color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100%; /* Set height to fill modal */
+}
+
+.video-container {
+  max-width: 90%;
+  max-height: 900vh;
+}
+
+.youtube-video {
+  width: 1000px; /* Set the width of the video to 90% of its container */
+  height: 700px; /* Let the height adjust proportionally based on the width */
+  max-width: none; /* Allow the video to exceed its natural width */
+  max-height: none; /* Allow the video to exceed its natural height */
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  font-size: 50px;
+  right: 150px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: gray;
+  transition: 0.5s;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 0 50px;
+  height: 100%;
+  color: white;
+  font-family: "Sen", sans-serif;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  font-size: 30px;
+  color: #4dbf00;
+}
+
+.menu-container {
+  flex: 6;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  cursor: pointer;
+}
+
+.menu-list-item {
+  color: white; /* specify the same color for visited links */
+}
+
+.menu-list-item.active {
+  color: black;
+}
+
+.menu-list-item:hover {
+  color: green;
+}
+
+.menu-list-item {
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+.menu-list-item:hover {
+  color: #4dbf00;
+}
+
+.menu-list-item {
+  font-weight: bold;
+}
+
+.profile-container {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profile-text-container {
+  margin: 0 20px 0 5px;
+}
+
+.profile-picture {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-icon {
+  color: goldenrod;
+}
+
+.toggle-ball {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  position: absolute;
+  right: 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+
+.left-menu-icon {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.container {
+  background-color: #151515;
+  min-height: calc(100vh - 50px);
+  color: white;
+}
+
+.featured-content {
+  height: 50vh;
+  padding: 50px;
+}
+
+.featured-title {
+  width: 200px;
+}
+
+.featured-desc {
+  width: 500px;
+  color: lightgray;
+  margin: 30px 0;
+  font-size: 30px;
+  min-width: 800px;
+}
+
+.featured-button {
+  background-color: #4dbf00;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.movie-list-container {
+  padding: 0 20px;
+}
+
+.movie-list {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+
+.movie-list-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.movie-list-wrapper.active {
+  color: #151515;
+}
+.movie-list-item {
+  margin-right: 30px;
+  position: relative;
+  margin-top: 40px;
+  max-width: 500px;
+}
+
+.movie-list-item.active {
+  color: black;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+
+.movie-list-item:hover .movie-list-item-title {
+  opacity: 1;
+}
+
+.movie-list-item:hover .movie-list-item-desc {
+  opacity: 1;
+}
+
+.movie-list-item:hover .movie-list-item-button {
+  opacity: 1;
+}
+
+.movie-list-item-img {
+  transition: all 0.5s ease-in-out;
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie-list-item-title {
+  padding: 0 10px;
+  font-size: 25px;
+  font-weight: 1000;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  width: 400px;
+  max-width: 324px;
+}
+
+.movie-list-item-title.active {
+  color: black;
+  font-weight: bold;
+}
+
+.movie-list-item-desc {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 200px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+  min-width: 300px;
+  color: white;
+}
+
+.movie-list-item-desc.active {
+  color: #000000;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.movie-list-item-button {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1%;
+  left: 10px;
+  opacity: 0;
+  transition: 0.25s all ease-in-out;
+  min-width: 100px;
+}
+
+.movie-list-item-button:hover {
+  background-color: rgba(150, 1, 1, 1); /* Transparent red */
+}
+
+.arrow {
+  font-size: 120px;
+  position: absolute;
+  top: 90px;
+  right: 0;
+  color: lightgray;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.container.active {
+  background-color: white;
+}
+
+.movie-list-title.active {
+  color: black;
+}
+
+.navbar-container.active {
+  background-color: white;
+  color: black;
+}
+
+.sidebar.active {
+  background-color: white;
+}
+
+.left-menu-icon.active {
+  color: black;
+}
+
+.toggle.active {
+  background-color: black;
+}
+
+#overlay {
+  display: none; /* Initially hide the overlay */
+  top: 0;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1000; /* Ensure the overlay is on top of other content */
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.toggle-ball.active {
+  background-color: white;
+  transform: translateX(-20px);
+}
+
+@media only screen and (max-width: 940px) {
+  .menu-container {
+    display: none;
+  }
+}

@@ -1,0 +1,658 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>Movie Design</title>
+  </head>
+
+  <body class="page">
+    <!-- Navbar Content -->
+    <div class="navbar">
+      <div class="navbar-container">
+        <div class="logo-container"><h1 class="logo">StreamToday</h1></div>
+        <div class="menu-container">
+          <ul class="menu-list">
+            <li><a class="menu-list-item">Home</a></li>
+            <li><a href="#Movies" class="menu-list-item">Movies</a></li>
+            <li><a href="#Popular" class="menu-list-item">Popular</a></li>
+            <li><a href="#Series" class="menu-list-item">TV Series</a></li>
+            <li><a href="#Trending" class="menu-list-item">Trending</a></li>
+          </ul>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-container">
+          <img class="profile-picture" src="Images/Rick.jpeg" alt="" />
+          <div class="profile-text-container">
+            <span class="profile-text">Profile</span>
+            <i class="fa-solid fa-caret-down toggle-down"></i>
+          </div>
+          <div class="toggle">
+            <i class="fa-solid fa-moon toggle-icon"></i>
+            <i class="fa-solid fa-sun toggle-icon"></i>
+            <div class="toggle-ball"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Content -->
+    <div class="container">
+      <div class="content-container">
+        <div
+          class="featured-content"
+          style="
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515),
+              url('Images/f-1.jpg');
+          "
+        >
+          <img class="featured-title" src="Images/f-t-1.png" alt="" />
+          <p class="featured-desc">
+            Welcome to my webstie where you can watch some cool movie/series
+            trailers with their description. Stay tuned for more site updates,
+            coming soon!!!
+          </p>
+        </div>
+
+        <!-- Modal for Video Player -->
+        <div class="modal" id="videoModal">
+          <div class="modal-content">
+            <div id="player" class="video-container"></div>
+            <i class="fa-solid fa-xmark close"></i>
+          </div>
+        </div>
+
+        <!-- New Movie Content -->
+        <div id="Movies" class="movie-list-container">
+          <h1 class="movie-list-title">NEW RELEASES</h1>
+          <div class="movie-list-wrapper">
+            <div class="movie-list">
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/1.jpeg" alt="" />
+                <span class="movie-list-item-title">Her</span>
+                <p class="movie-list-item-desc">
+                  A sensitive man writes personal letters for a living.
+                  Heartbroken after his marriage ends, he becomes fascinated
+                  with a new operating system. Upon starting it, he meets
+                  Samantha, an intuitive and unique entity. Their friendship
+                  evolves into love.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="ne6p6MfLBxc"
+                >
+                  Trailer
+                </button>
+              </div>
+
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/2.jpeg" alt="" />
+
+                <span class="movie-list-item-title">Star Wars: Episode IX</span>
+                <p class="movie-list-item-desc">
+                  In "Star Wars: Episode IX," the Resistance, led by Rey,
+                  confronts the First Order and Emperor Palpatine in a final
+                  battle to bring balance to the Force.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="8Qn_spdM5Zg"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/3.jpg" alt="" />
+
+                <span class="movie-list-item-title"
+                  >Storm: Letters van Vuur</span
+                >
+                <p class="movie-list-item-desc">
+                  In "Storm: Letters van Vuur," a courageous boy named Storm
+                  defies a regime of censorship by delivering a secret letter,
+                  sparking a rebellion.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="2gYgoDJP0RM"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/4.jpg" alt="" />
+
+                <span class="movie-list-item-title">1917 (2019 film)</span>
+                <p class="movie-list-item-desc">
+                  "In 1917," two British soldiers must deliver a critical
+                  message to prevent a deadly ambush during World War I,
+                  embarking on a harrowing journey through enemy territory.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="YqNYrYUiMfg"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/5.jpg" alt="" />
+
+                <span class="movie-list-item-title">The Avengers I</span>
+                <p class="movie-list-item-desc">
+                  In "The Avengers," a team of Marvel superheroes, including
+                  Iron Man, Captain America, Thor, Hulk, Black Widow, and
+                  Hawkeye, unite to stop the villain Loki from invading Earth
+                  with an alien army.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="NPoHPNeU9fc"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Rampage.jpeg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Rampage</span>
+                <p class="movie-list-item-desc">
+                  In "Rampage," Dwayne Johnson's character, Davis Okoye, teams
+                  up with a genetic engineer to stop genetically mutated animals
+                  from destroying a city.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="coOKvrsmQiI"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Infinity_war.jpeg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title"
+                  >Avengers: Infinity War</span
+                >
+                <p class="movie-list-item-desc">
+                  "Infinity War" sees the Avengers and their allies team up to
+                  stop Thanos from collecting all the Infinity Stones, which he
+                  plans to use to wipe out half of all life in the universe.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="6ZfuNTqbHE8"
+                >
+                  Trailer
+                </button>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+          </div>
+        </div>
+
+        <!-- Popular Movie Content -->
+        <div id="Popular" class="movie-list-container">
+          <h1 class="movie-list-title">POPULAR</h1>
+          <div class="movie-list-wrapper">
+            <div class="movie-list">
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/8.jpg" alt="" />
+
+                <span class="movie-list-item-title">Oblivion</span>
+                <p class="movie-list-item-desc">
+                  In "Oblivion," Jack Harper, a drone repairman, uncovers
+                  startling truths about the war and his identity, leading him
+                  to confront powerful forces threatening humanity's future.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="XmIIgE7eSak"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/9.jpg" alt="" />
+
+                <span class="movie-list-item-title">The Hobbit</span>
+                <p class="movie-list-item-desc">
+                  "The Hobbit: An Unexpected Journey" tells the story of Bilbo
+                  Baggins joining a group of dwarves and Gandalf on a quest to
+                  reclaim their homeland from the dragon Smaug.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="SDnYMbYB-nU"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/10.jpg" alt="" />
+
+                <span class="movie-list-item-title">Due Date</span>
+                <p class="movie-list-item-desc">
+                  In "Due Date," an architect and an aspiring actor go on a
+                  chaotic road trip to make it to the birth of the architect's
+                  child on time, encountering hilarious misadventures along the
+                  way.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="hEtu68oxBfc"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/11.jpg" alt="" />
+
+                <span class="movie-list-item-title">Kick-Ass</span>
+                <p class="movie-list-item-desc">
+                  "Kick-Ass" follows Dave Lizewski, a high school student turned
+                  real-life superhero, as he battles crime alongside other
+                  vigilantes in a series of exhilarating adventures.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="2rpXHqnGDXo"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/12.jpg" alt="" />
+
+                <span class="movie-list-item-title">The Emoji Movie</span>
+                <p class="movie-list-item-desc">
+                  "The Emoji Movie" is an animated adventure that follows Gene,
+                  a unique emoji, as he journeys through various smartphone apps
+                  in search of acceptance and identity.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="r8pJt4dK_s4"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Man_of_steel.jpeg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Man of Steel</span>
+                <p class="movie-list-item-desc">
+                  "Man of Steel" depicts the origin of Superman as Kal-El, an
+                  alien from Krypton, is raised as Clark Kent on Earth. When the
+                  planet is threatened, Clark must embrace his destiny as
+                  Superman to save humanity from destruction.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="KVu3gS7iJu4"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/The_Flash.jpeg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">The Flash: 2023</span>
+                <p class="movie-list-item-desc">
+                  "The Flash" follows Barry Allen as he battles metahuman
+                  villains and unravels the mysteries of his powers while
+                  protecting Central City.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="jprhe-cWKGs"
+                >
+                  Trailer
+                </button>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+          </div>
+        </div>
+        <div
+          class="featured-content"
+          style="
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515),
+              url('Images/f-2.jpg');
+          "
+        >
+          <img class="featured-title" src="Images/f-t-2.png" alt="" />
+          <div id="player-15" class="video-container">
+            <iframe
+              class="youtube-video"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="featured-desc"></p>
+        </div>
+
+        <!-- TV Series Content -->
+        <div id="Series" class="movie-list-container">
+          <h1 class="movie-list-title">TV SERIES</h1>
+          <div class="movie-list-wrapper">
+            <div class="movie-list">
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Dark_Knight.jpeg"
+                  alt=""
+                />
+                <span class="movie-list-item-title"
+                  >Batman: The Dark Knight</span
+                >
+                <p class="movie-list-item-desc">
+                  Batman battles the Joker, a twisted criminal wreaking havoc on
+                  Gotham City. With allies by his side, Batman faces moral
+                  challenges as he fights to stop the Joker's chaos and save the
+                  city.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="EXeTwQWrcwY"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Insecure.jpeg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Insecure</span>
+                <p class="movie-list-item-desc">
+                  "Insecure" is a series created by Issa Rae and Larry Wilmore,
+                  following Issa Dee as she navigates life in Los Angeles,
+                  dealing with career, relationships, and self-discovery
+                  alongside her best friend Molly.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="kqCwxtEdJWk"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/17.jpg" alt="" />
+
+                <span class="movie-list-item-title">Aquaman</span>
+                <p class="movie-list-item-desc">
+                  In "Aquaman," Arthur Curry, the heir to Atlantis, must embrace
+                  his role as the hero Aquaman to stop his half-brother from
+                  waging war on the surface world.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="WDkg3h8PCVU"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Rick&Morty_Series.jpg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Rick and Morty</span>
+                <p class="movie-list-item-desc">
+                  "Rick and Morty" chronicles the adventures of a genius
+                  scientist, Rick Sanchez, and his naive grandson, Morty Smith,
+                  as they embark on interdimensional escapades filled with
+                  humor, chaos, and existential ponderings.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="BFTSrbB2wII"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Game_of_thrones.jpg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Game of Thrones</span>
+                <p class="movie-list-item-desc">
+                  In "Game of Thrones," noble families in Westeros compete for
+                  power while an ancient threat, the White Walkers, threatens
+                  the realm.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="KPLWWIOCOOQ"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/18.jpg" alt="" />
+
+                <span class="movie-list-item-title">Fairytail</span>
+                <p class="movie-list-item-desc">
+                  "Fairy Tail" chronicles the adventures of Natsu Dragneel and
+                  his friends, wizards from the Fairy Tail guild, as they
+                  navigate the magical world of Fiore, facing challenges and
+                  forging unbreakable bonds along the way.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="4KSN7mxhiYE"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/19.jpg" alt="" />
+
+                <span class="movie-list-item-title"
+                  >Spider-Man: Homecoming</span
+                >
+                <p class="movie-list-item-desc">
+                  "Spider-Man: Homecoming" follows Peter Parker as he balances
+                  high school life with his duties as the superhero Spider-Man,
+                  facing off against the Vulture while learning the ropes with
+                  mentor Tony Stark/Iron Man.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="DiTECkLZ8HM"
+                >
+                  Trailer
+                </button>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+          </div>
+        </div>
+
+        <!-- Movie Trending Content -->
+        <div id="Trending" class="movie-list-container">
+          <h1 class="movie-list-title">TRENDING</h1>
+          <div class="movie-list-wrapper">
+            <div class="movie-list">
+              <div class="movie-list-item">
+                <img class="movie-list-item-img" src="Images/Dune.jpg" alt="" />
+
+                <span class="movie-list-item-title">Dune</span>
+                <p class="movie-list-item-desc">
+                  "Dune" centers on Paul Atreides' quest for power and
+                  redemption on the desert planet Arrakis, where he discovers
+                  his destiny as a leader among the native Fremen people.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="n9xhJrPXop4"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Dune2.jpg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Dune II</span>
+                <p class="movie-list-item-desc">
+                  "Dune 2" follows Paul Atreides as he grapples with his destiny
+                  and faces new challenges on the desert planet Arrakis.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="Way9Dexny3w"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/hancock.jpeg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Hancock</span>
+                <p class="movie-list-item-desc">
+                  In "Hancock," a troubled superhero tries to redeem himself
+                  with the help of a PR consultant, discovering unexpected
+                  truths along the way.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="vexi9xLS-bQ"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/The_Proposal.png"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">The Proposal</span>
+                <p class="movie-list-item-desc">
+                  "The Proposal" is a romantic comedy about a high-powered book
+                  editor who convinces her assistant to marry her to avoid
+                  deportation, leading to unexpected love.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="dbYST9QhCYY"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Willy_Wonka.jpg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Willy Wonka (2024)</span>
+                <p class="movie-list-item-desc">
+                  In "Willy Wonka" Charlie Bucket wins a golden ticket to tour
+                  the magical chocolate factory of Willy Wonka, where he
+                  discovers wonders and lessons about kindness and happiness.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="otNh9bTjXWg"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/Openheimer.avif"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">Oppenheimer</span>
+                <p class="movie-list-item-desc">
+                  "Oppenheimer" is a biographical drama depicting the life of J.
+                  Robert Oppenheimer, the physicist who led the Manhattan
+                  Project, exploring his moral dilemmas and the human cost of
+                  scientific innovation.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="uYPbbksJxIg"
+                >
+                  Trailer
+                </button>
+              </div>
+              <div class="movie-list-item">
+                <img
+                  class="movie-list-item-img"
+                  src="Images/outlaws.jpg"
+                  alt=""
+                />
+
+                <span class="movie-list-item-title">The Out-Laws</span>
+                <p class="movie-list-item-desc">
+                  "The Out-Laws" follows four sisters seeking justice for their
+                  murdered brother while confronting personal challenges and
+                  uncovering dark secrets.
+                </p>
+                <button
+                  class="movie-list-item-button"
+                  data-video-id="R8xepj9wpi4"
+                >
+                  Trailer
+                </button>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
