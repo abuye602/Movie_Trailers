@@ -1,3 +1,8 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
 }
@@ -83,6 +88,12 @@ body {
 }
 
 .logo {
+  font-size: 30px;
+  color: #4dbf00;
+}
+
+.menu-logo {
+  display: none;
   font-size: 30px;
   color: #4dbf00;
 }
@@ -188,11 +199,10 @@ body {
 }
 
 .featured-desc {
-  width: 500px;
+  width: 800px;
   color: lightgray;
   margin: 30px 0;
   font-size: 30px;
-  min-width: 800px;
 }
 
 .featured-button {
@@ -273,16 +283,17 @@ body {
   transition: 1s all ease-in-out;
   width: 400px;
   max-width: 324px;
+  color: black;
 }
 
 .movie-list-item-title.active {
-  color: black;
+  color: whitesmoke;
   font-weight: bold;
 }
 
 .movie-list-item-desc {
   padding: 10px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   position: absolute;
   top: 20%;
@@ -291,11 +302,11 @@ body {
   opacity: 0;
   transition: 1s all ease-in-out;
   min-width: 300px;
-  color: white;
+  color: black;
 }
 
 .movie-list-item-desc.active {
-  color: #000000;
+  color: whitesmoke;
   font-weight: bold;
   font-size: 15px;
 }
@@ -321,13 +332,20 @@ body {
 }
 
 .arrow {
-  font-size: 120px;
+  font-size: 100px;
   position: absolute;
   top: 90px;
   right: 0;
   color: lightgray;
   opacity: 0.6;
   cursor: pointer;
+  transition: font-size 0.7s ease, opacity ease-in-out;
+  z-index: 100;
+}
+
+.arrow:hover {
+  font-size: 115px;
+  opacity: 0.85;
 }
 
 .container.active {
@@ -376,12 +394,144 @@ body {
   transform: translateX(-20px);
 }
 
-@media only screen and (max-width: 940px) {
+/* Light Mode (default) */
+.page,
+.container,
+.navbar-container,
+.movie-list-title,
+.menu-list-item,
+.movie-list-container {
+  background-color: white;
+  color: black;
+}
+
+/* Dark Mode Styles */
+.page.active,
+.container.active,
+.navbar-container.active,
+.movie-list-title.active,
+.menu-list-item.active,
+.movie-list-container.active {
+  background-color: #151515;
+  color: #f1f1f1; /* Light text for dark mode */
+}
+
+/* Additional Dark Mode Styling */
+.toggle.active {
+  background-color: black;
+}
+
+.toggle-ball.active {
+  background-color: white;
+  transform: translateX(-20px); /* Adjust for ball movement */
+}
+
+.logo-container .display {
+  display: none;
+  padding-left: 30px;
+  font-size: 30px; /* Adjust size */
+  cursor: pointer;
+  color: white;
+}
+
+.fa-xmark:before {
+  display: none;
+}
+
+@media screen and (max-width: 940px) {
   .menu-container {
     display: none;
   }
 
   .page {
+    max-width: 320px;
+  }
+
+  .menu-logo {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  .logo-container .display {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  .fa-xmark:before {
+    display: block;
+    font-size: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: -100%; /* Positioned off the screen to the right */
+    top: 0;
+    width: 100%; /* Adjust width for how much of the screen the menu should take */
+    height: 40vh; /* Full height of the screen */
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1000;
+    transition: right 0.4s ease; /* Transition for smooth sliding */
+    padding-top: 60px;
+    line-height: 40px;
+    background: linear-gradient(165deg, #151515, #801601, #151515);
+  }
+
+  /* When the menu-container is active (hamburger clicked), display it as a vertical menu */
+  .menu-container.active {
+    right: 0;
+  }
+
+  .menu-container.active .menu-list-item {
+    color: white;
+    background-color: transparent;
+  }
+
+  .menu-list {
+    flex-direction: column; /* Stack the menu items vertically */
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .menu-list-item {
+    margin: 10px 0;
+    text-align: center;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .featured-desc {
+    max-width: 250px;
+    font-size: 24px;
+  }
+
+  .navbar-container {
+    padding: 0 10px 0 40px;
+  }
+
+  .profile-text-container {
+    display: none;
+  }
+
+  .profile-picture {
+    display: none;
+  }
+
+  .toggle.active {
+    display: none;
+  }
+
+  .page.active {
     max-width: 320px;
   }
 }

@@ -1,33 +1,69 @@
 const arrows = document.querySelectorAll(".arrow");
 const movieLists = document.querySelectorAll(".movie-list");
-let clickCounter = 0; // Declare clickCounter globally
 
-arrows.forEach((arrow, i) => {
-  arrow.addEventListener("click", () => {
-    slideMovieList(i);
-  });
-});
+// Function to handle scrolling logic for different screen sizes
+function handleMovieScroll() {
+  arrows.forEach((arrow, i) => {
+    let clickCounter = 0;
+    const movieList = movieLists[i];
+    const movieItems = movieList.querySelectorAll("img");
 
-movieLists.forEach((list, i) => {
-  const itemNum = list.querySelectorAll("img").length;
+    const itemWidth = 270; // Fixed width of each movie item
+    const totalItems = movieItems.length;
+    const totalWidth = totalItems * itemWidth; // Total width of all movie items
 
-  list.addEventListener("wheel", (event) => {
-    const deltaX = event.deltaX;
-    const deltaY = event.deltaY;
-    const ratio = Math.floor(window.innerWidth / 270);
+    const movieListWrapper = movieList.parentElement; // The visible container of the movie list
+    const visibleWidth = movieListWrapper.offsetWidth; // Width of the visible area
 
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      event.preventDefault();
-      if (deltaX > 0 && itemNum - (3 + clickCounter) + (4 - ratio) > 0) {
-        clickCounter++;
-        slideMovieList(i);
-      } else if (deltaX < 0 && clickCounter > 0) {
-        clickCounter--;
-        slideMovieList(i);
+    // Event listener for arrow clicks
+    arrow.addEventListener("click", () => {
+      const screenWidth = window.innerWidth;
+      let maxTranslateX, scrollAmount, maxClicks;
+
+      if (screenWidth <= 768) {
+        // Mobile screen logic (<= 768px)
+        scrollAmount = itemWidth; // Scroll one movie width at a time
+        maxTranslateX = totalWidth - visibleWidth; // Max scrollable distance
+        maxClicks = Math.ceil(totalItems) - 1 + 1; // Allow for one additional click
+      } else {
+        // Desktop screen logic (> 768px)
+        scrollAmount = visibleWidth / 2; // Scroll by half of the visible area
+        maxTranslateX = totalWidth - visibleWidth; // Max scrollable distance
+        maxClicks = Math.ceil(maxTranslateX / scrollAmount); // Limit scrolls based on reduced scroll amount
       }
-    }
+
+      // Perform scrolling logic
+      if (clickCounter < maxClicks) {
+        clickCounter++;
+        movieList.style.transform = `translateX(${
+          -scrollAmount * clickCounter
+        }px)`;
+      } else {
+        // Reset to the beginning when reaching the end
+        movieList.style.transform = `translateX(0)`;
+        clickCounter = 0;
+      }
+    });
   });
-});
+}
+
+// Run the function initially
+handleMovieScroll();
+
+// Optional: Recalculate when window is resized
+window.addEventListener("resize", handleMovieScroll);
+
+// Run the function initially
+handleMovieScroll();
+
+// Optional: Add a resize event listener to recalculate when the screen is resized
+window.addEventListener("resize", handleMovieScroll);
+
+// Run the function initially
+handleMovieScroll();
+
+// Optional: Add a resize event listener to recalculate when the screen is resized
+window.addEventListener("resize", handleMovieScroll);
 
 function slideMovieList(index) {
   const ratio = Math.floor(window.innerWidth / 270);
@@ -111,14 +147,68 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Grab the ball (toggle button) and the elements that should change color
 const ball = document.querySelector(".toggle-ball");
 const items = document.querySelectorAll(
-  ".page,.container,.navbar-container,.toggle,.movie-list-title,.menu-list-item,.movie-list-item-title,.movie-list-item-desc"
+  ".page, .container, .navbar-container, .toggle, .movie-list-title, .movie-list-container, .menu-list-item, .movie-list-item-title, .movie-list-item-desc"
 );
 
+// Check localStorage to apply the saved theme (dark or light)
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    applyDarkMode(); // If the saved theme is dark, apply it
+  } else {
+    removeDarkMode(); // If no theme or light, apply light mode
+  }
+});
+
+// Function to toggle the dark mode
 ball.addEventListener("click", () => {
-  items.forEach((item) => {
-    item.classList.toggle("active");
+  if (ball.classList.contains("active")) {
+    removeDarkMode(); // Remove dark mode
+  } else {
+    applyDarkMode(); // Apply dark mode
+  }
+});
+
+// Apply dark mode
+function applyDarkMode() {
+  items.forEach((item) => item.classList.add("active"));
+  ball.classList.add("active");
+
+  // Save the theme in localStorage
+  localStorage.setItem("theme", "dark");
+}
+
+// Remove dark mode
+function removeDarkMode() {
+  items.forEach((item) => item.classList.remove("active"));
+  ball.classList.remove("active");
+
+  // Save the theme in localStorage
+  localStorage.setItem("theme", "light");
+}
+
+// Hamburger button active
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".display");
+  const menu = document.querySelector(".menu-container");
+  const close = document.querySelector(".exit");
+  const menuItems = document.querySelectorAll(".menu-list-item");
+
+  hamburger.addEventListener("click", () => {
+    menu.classList.add("active");
   });
-  ball.classList.toggle("active");
+
+  close.addEventListener("click", () => {
+    menu.classList.remove("active");
+  });
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+  });
 });
