@@ -9,5 +9,3 @@ The plan for this website is to be a fully functioning streaming site. But for n
 Project Link: https://github.com/abuye602/Movie_Trailers
 
 Website Link: https://abuye602.github.io/Movie_Trailers/
-
-For this project, I used JavaScript, HTML, CSS, Google API for fonts, and YouTube's API to host the movie and TV trailers.
