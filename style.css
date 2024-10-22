@@ -34,11 +34,6 @@ body {
   height: 100%; /* Set height to fill modal */
 }
 
-.video-container {
-  max-width: 90%;
-  max-height: 900vh;
-}
-
 .youtube-video {
   width: 1000px; /* Set the width of the video to 90% of its container */
   height: 700px; /* Let the height adjust proportionally based on the width */
@@ -199,7 +194,7 @@ body {
 }
 
 .featured-desc {
-  width: 800px;
+  min-width: 100%;
   color: lightgray;
   margin: 30px 0;
   font-size: 30px;
@@ -334,7 +329,7 @@ body {
 .arrow {
   font-size: 100px;
   position: absolute;
-  top: 90px;
+  bottom: 80px;
   right: 0;
   color: lightgray;
   opacity: 0.6;
@@ -434,11 +429,15 @@ body {
   color: white;
 }
 
-.fa-xmark:before {
+.menu-container .fa-xmark:before {
   display: none;
 }
 
 @media screen and (max-width: 940px) {
+  html,
+  body {
+    min-width: 100%;
+  }
   .menu-container {
     display: none;
   }
@@ -461,7 +460,7 @@ body {
     right: 15px;
   }
 
-  .fa-xmark:before {
+  .menu-container .fa-xmark:before {
     display: block;
     font-size: 30px;
     position: absolute;
@@ -507,17 +506,6 @@ body {
     text-align: center;
     color: white;
   }
-}
-
-@media screen and (max-width: 320px) {
-  .featured-desc {
-    max-width: 250px;
-    font-size: 24px;
-  }
-
-  .navbar-container {
-    padding: 0 10px 0 40px;
-  }
 
   .profile-text-container {
     display: none;
@@ -529,6 +517,29 @@ body {
 
   .toggle.active {
     display: none;
+  }
+
+  .youtube-video {
+    max-width: 100%; /* Set the width of the video to 90% of its container */
+    height: 50%; /* Let the height adjust proportionally based on the width */
+    border-radius: 10px;
+  }
+
+  .close {
+    position: absolute;
+    top: 150px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .featured-desc {
+    max-width: 250px;
+    font-size: 24px;
+  }
+
+  .navbar-container {
+    padding: 0 10px 0 40px;
   }
 
   .page.active {

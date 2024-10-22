@@ -157,7 +157,7 @@ const items = document.querySelectorAll(
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
 
-  if (savedTheme === "dark") {
+  if (savedTheme === "light") {
     applyDarkMode(); // If the saved theme is dark, apply it
   } else {
     removeDarkMode(); // If no theme or light, apply light mode
@@ -179,7 +179,7 @@ function applyDarkMode() {
   ball.classList.add("active");
 
   // Save the theme in localStorage
-  localStorage.setItem("theme", "dark");
+  localStorage.setItem("theme", "light");
 }
 
 // Remove dark mode
@@ -188,7 +188,7 @@ function removeDarkMode() {
   ball.classList.remove("active");
 
   // Save the theme in localStorage
-  localStorage.setItem("theme", "light");
+  localStorage.setItem("theme", "dark");
 }
 
 // Hamburger button active
